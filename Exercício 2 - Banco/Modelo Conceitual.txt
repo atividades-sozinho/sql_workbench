@@ -9,8 +9,8 @@ Toda operação (depósito ou saque) deve ser armazenada, juntamente com sua dat
 agencia - id (PK), nome, endereco
 funcionarios - id (PK), nome, CPF, telefone, endereço, Categoria (FK), Agencia (FK)
 categoria - id (PK), nome, salario
-clientes - id (PK), nome, CPF, telefone, endereço, data_adesao, conta, tipo_conta, Agencia (FK)
-contacorrente - id (PK), data_abertura, limite, saldo, 
-contapoupanca - id (PK), data_abertura, limite, saldo, taxa_mensal 
+clientes - id (PK), nome, CPF, telefone, endereço, data_adesao, contas, tipo_conta, Agencia (FK)
+contacorrente - id (PK), data_abertura, limite, saldo, senha
+contapoupanca - id (PK), data_abertura, limite, saldo, juros_mensais, senha 
 deposito - id (PK),
 saque - id (PK),
