@@ -1,0 +1,16 @@
+O banco pode ter várias agências e o sistema deve permitir armazenar o código da agência, nome e endereço.​
+
+Para cada agência devem ser armazenados os dados dos funcionários  (código, nome, CPF, endereço e salário) e clientes (codigo, nome, CPF, data de adesão, telefone e endereço).​
+
+Os clientes podem ter dois tipos de contas (corrente ou poupança)  devendo ser armazenadas as seguintes informações: data de abertura, limite e saldo.​
+
+Toda operação (depósito ou saque) deve ser armazenada, juntamente com sua data e valor, e vinculada com uma devida conta, cliente e agência.
+
+agencia - id (PK), nome, endereco
+funcionarios - id (PK), nome, CPF, telefone, endereço, Categoria (FK), Agencia (FK)
+categoria - id (PK), nome, salario
+clientes - id (PK), nome, CPF, telefone, endereço, data_adesao, conta, tipo_conta, Agencia (FK)
+contacorrente - id (PK), data_abertura, limite, saldo, 
+contapoupanca - id (PK), data_abertura, limite, saldo, taxa_mensal 
+deposito - id (PK),
+saque - id (PK),
