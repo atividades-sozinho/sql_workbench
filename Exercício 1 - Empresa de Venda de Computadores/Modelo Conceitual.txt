@@ -1,0 +1,5 @@
+venda - id (PK), data_venda, custo_venda, FK de clientes e funcionários 
+manutencao - id (PK), data_manut, custo_manut, FK de clientes e funcionários
+clientes - id (PK), nome, endereço, telefone
+funcionarios - id (PK), nome, endereço, telefone, FK da categoria
+categoria_func - id (PK), tipo, salario
