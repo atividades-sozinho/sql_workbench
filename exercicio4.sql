@@ -66,7 +66,7 @@ create table unidade_medida(
 	id_unidade_medida int unsigned not null auto_increment,
     sigla char (2),
     descricao varchar (100),
-    PRIMARY KEY (id_unidade_media)
+    PRIMARY KEY (id_unidade_medida)
 );
 
 create table grupo_produto(
@@ -97,5 +97,25 @@ create table item_venda(
     PRIMARY KEY (id_item_venda),
     FOREIGN KEY (id_venda) REFERENCES venda(id_venda),
     FOREIGN KEY (id_produto) REFERENCES produtos(id_produto),
-    FOREIGN KEY (id_unidade_medida) REFERENCES venda(id_unidade_medida),
+    FOREIGN KEY (id_unidade_medida) REFERENCES unidade_medida (id_unidade_medida)
 );
+
+/*Parte do DML*/
+
+insert into paises (id_pais, nome, idioma)
+values (1, 'Brasil', 'PT');
+insert into paises (id_pais, nome, idioma)
+values (2, 'EUA', 'EN');
+
+insert into estados(id_estado, id_pais, nome)
+values (1, 1, 'Santa Catarina');
+insert into estados(id_estado, id_pais, nome)
+values (2, 1, 'Paraná');
+insert into estados(id_estado, id_pais, nome)
+values (3, 1, 'Rio Grande do Sul');
+insert into estados(id_estado, id_pais, nome)
+values (4, 1, 'São Paulo');
+insert into estados(id_estado, id_pais, nome)
+values (5, 2, 'California');
+
+
