@@ -158,12 +158,9 @@ delete from clientes
 	where id_cliente = true and situacao = 'I';
 
 /*Joins*/
-select venda.data_venda, vendedores.nome, clientes.razao_social, clientes.id_cidade, cidades.id_estado, estados.id_pais,
-produtos.descricao, item_venda.quantidade, unidade_medida.descricao, item_venda.preco_unitario, item_venda.total
-from venda, vendedores, clientes, cidades, estados, produtos, item_venda, unidade_medida
-inner join item_venda on venda.data_venda = venda.id_venda
-inner join venda on vendedores.nome = vendedores.id_vendedor
-inner join vendedores on clientes.razao_social = clientes.id_cliente
+select * from venda
+inner join item_venda on venda.id_item_venda = item_venda.id_item_venda
+
 		
 /*Joins
 
