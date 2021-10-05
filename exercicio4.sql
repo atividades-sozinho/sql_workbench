@@ -165,7 +165,7 @@ inner join item_venda on venda.id_item_venda = item_venda.id_item_venda
 /*Joins
 
 select venda.data_venda, vendedores.nome, clientes.razao_social from venda
-	left outer join vendedores
+    left outer join vendedores
     left outer join clientes
     on vendedores.id_vendedor = venda.id_venda
     on clientes.razao_social = venda.id_venda;
