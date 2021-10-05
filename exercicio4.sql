@@ -135,12 +135,14 @@ values (7, 4, 'São Paulo');
 insert into cidades(id_cidade, id_estado, nome)
 values (8, 5, 'Mountain View');
 
+/*Inserindo dados para serem usados no join*/
 insert into vendedores (id_vendedor, nome, telefone, email, endereco) values (1, 'Washington', '99999999999999', 'aaaa@email.com',
-'Endereco1');
+'EnderecoVendedor');
 insert into clientes (id_cliente, id_cidade, razao_social, nome_fantasia, cnpj, endereco, cep, telefone, email, situacao) values
-(1, 1, 'Joseismo', 'aaaaaa', '99999999999998', 'Rua1', '1111111', '99999999999998', 'baaa@email.com', 'A'); 
+(1, 1, 'S/A', 'Empresa1', '99999999999998', 'EnderecoCliente', '1111111', '00000000000001', 'bbbb@email.com', 'A'); 
 insert into venda (id_venda, id_vendedor, id_cliente, data_venda, situacao) values (1, 1, 1, '2000-01-01', 'F'); 
 
+/*Continuação do DML*/
 select id_cliente, cnpj from clientes;
 select id_cliente, situacao from clientes
 	where situacao='A';
@@ -155,7 +157,23 @@ update item_venda set preco_unitario = '3700'
 delete from clientes
 	where id_cliente = true and situacao = 'I';
 
-select venda.data_venda, vendedores.nome from venda
+/*Joins*/
+select venda.data_venda, vendedores.nome, clientes.razao_social, clientes.id_cidade, cidades.id_estado, estados.id_pais,
+produtos.descricao, item_venda.quantidade, unidade_medida.descricao, item_venda.preco_unitario, item_venda.total
+from venda, vendedores, clientes, cidades, estados, produtos, item_venda, unidade_medida
+inner join item_venda on venda.data_venda = venda.id_venda
+inner join venda on vendedores.nome = vendedores.id_vendedor
+inner join vendedores on clientes.razao_social = clientes.id_cliente
+		
+/*Joins
+
+select venda.data_venda, vendedores.nome, clientes.razao_social from venda
 	left outer join vendedores
+    left outer join clientes
     on vendedores.id_vendedor = venda.id_venda
-    
+    on clientes.razao_social = venda.id_venda;
+
+select venda.data_venda, clientes.razao_social from venda
+	left outer join clientes
+    on clientes.razao_social = venda.id_venda;
+*/
