@@ -135,6 +135,12 @@ values (7, 4, 'São Paulo');
 insert into cidades(id_cidade, id_estado, nome)
 values (8, 5, 'Mountain View');
 
+insert into vendedores (id_vendedor, nome, telefone, email, endereco) values (1, 'Washington', '99999999999999', 'aaaa@email.com',
+'Endereco1');
+insert into clientes (id_cliente, id_cidade, razao_social, nome_fantasia, cnpj, endereco, cep, telefone, email, situacao) values
+(1, 1, 'Joseismo', 'aaaaaa', '99999999999998', 'Rua1', '1111111', '99999999999998', 'baaa@email.com', 'A'); 
+insert into venda (id_venda, id_vendedor, id_cliente, data_venda, situacao) values (1, 1, 1, '2000-01-01', 'F'); 
+
 select id_cliente, cnpj from clientes;
 select id_cliente, situacao from clientes
 	where situacao='A';
@@ -148,3 +154,8 @@ update item_venda set preco_unitario = '3700'
     where id_produto = 1;
 delete from clientes
 	where id_cliente = true and situacao = 'I';
+
+select venda.data_venda, vendedores.nome from venda
+	left outer join vendedores
+    on vendedores.id_vendedor = venda.id_venda
+    
