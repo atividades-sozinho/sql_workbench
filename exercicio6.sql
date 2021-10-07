@@ -149,14 +149,13 @@ values (1, 1, 'Gael Elias da Silva', 'gaelsilva@email.com', '58302094706', '7719
 
 insert into viagens (id_viagem, id_cliente, id_motorista, id_cidade_origem, id_cidade_destino, valor_carga)
 values (1, 1, 1, 3, 1, '25000.0'),
-       (2, 1, 1, 5, 2, '15000.0'),
+       (2, 1, 1, 4, 2, '15000.0'),
        (3, 2, 2, 6, 10, '11000.0'),
        (4, 3, 3, 11, 15, '17000.0'),
        (5, 3, 3, 12, 14, '8000.0');
 
 select id_viagem, id_cidade_origem, id_cidade_destino from viagens where id_cidade_origem or id_cidade_destino = 3; 
-select id_produtos_viagens, id_produto from produtos_viagens where id_produto = 2;
-select id_produtos from  
 
+select id_produtos_viagens, id_produto from produtos_viagens where id_produto = 2;
 
 
